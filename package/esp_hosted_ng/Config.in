@@ -1,0 +1,8 @@
+
+
+config BR2_PACKAGE_ESP_HOSTED_NG
+	bool "esp hosted ng sdio interface"
+	default n
+	help
+		ESP32 HOSTED NG(SDIO)
+
