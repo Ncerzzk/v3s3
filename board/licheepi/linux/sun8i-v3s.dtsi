@@ -452,6 +452,11 @@
 				function = "i2c1";
 			};
 
+			uart1_pins: uart1-pins {
+				pins = "PE22", "PE21";
+				function = "uart1";
+			};
+
 			uart0_pb_pins: uart0-pb-pins {
 				pins = "PB8", "PB9";
 				function = "uart0";
@@ -559,6 +564,8 @@
 			dmas = <&dma 7>, <&dma 7>;
 			dma-names = "rx", "tx";
 			resets = <&ccu RST_BUS_UART1>;
+			pinctrl-0 = <&uart1_pins>;
+			pinctrl-names = "default";
 			status = "disabled";
 		};
 
@@ -596,8 +603,6 @@
 			interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
 			clocks = <&ccu CLK_BUS_I2C1>;
 			resets = <&ccu RST_BUS_I2C1>;
-			pinctrl-names = "default";
-			pinctrl-0 = <&i2c1_pe_pins>;
 			status = "disabled";
 			#address-cells = <1>;
 			#size-cells = <0>;
