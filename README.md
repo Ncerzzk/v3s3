@@ -52,6 +52,10 @@ make source
 # Build
 make all
 
+# Do some rebuilding if necessary
+make uboot-reconfigure
+make host-uboot-tools-rebuild
+
 # Burn output image onto an SD card
 sudo dd if=output/images/sdcard.img of=/dev/sdX bs=4M
 ```
