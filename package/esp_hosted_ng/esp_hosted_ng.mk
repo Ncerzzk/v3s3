@@ -13,7 +13,7 @@ define ESP_HOSTED_NG_BUILD_CMDS
 endef
 
 define ESP_HOSTED_NG_INSTALL_TARGET_CMDS
-	$(INSTALL) -D -m 0755 $(@D)/esp_hosted_ng/host/esp32_sdio.ko  $(TARGET_DIR)/root/
+	$(INSTALL) -D -m 0755 $(@D)/esp_hosted_ng/host/esp32_sdio.ko  $(TARGET_DIR)/root/wifi/
 endef
 
 $(eval $(generic-package))
