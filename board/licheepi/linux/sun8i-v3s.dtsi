@@ -487,6 +487,11 @@
 				pins = "PC0", "PC1", "PC2", "PC3";
 				function = "spi0";
 			};
+			
+			pwm_pins: pwm_pins{
+				pins = "PB4";
+				function = "pwm0";	
+			};
 		};
 
 		timer@1c20c00 {
@@ -508,8 +513,8 @@
 		pwm: pwm@1c21400 {
 			compatible = "allwinner,sun8i-v3s-pwm",
 				     "allwinner,sun7i-a20-pwm";
-			//reg = <0x01c21400 0xc>;	// mainline 5.19.3 version
-			reg = <0x01c21400 0x400>;
+			reg = <0x01c21400 0xc>;	// mainline 5.19.3 version
+			//reg = <0x01c21400 0x400>;
 			clocks = <&osc24M>;
 			#pwm-cells = <3>;
 			status = "disabled";

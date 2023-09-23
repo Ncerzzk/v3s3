@@ -32,11 +32,10 @@
 	status = "okay";
 };
 
-/*
+
 &ohci0 {
 	status = "okay";
 };
-*/
 
 &mmc0 {
 	broken-cd;

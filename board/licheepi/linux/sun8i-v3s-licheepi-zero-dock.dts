@@ -11,6 +11,7 @@
 		mmc1 = &mmc1;
 	};
 
+	/*
 	leds {
 		compatible = "gpio-leds";
 		status = "okay";
@@ -27,6 +28,7 @@
 		};
 		
 	};
+	*/
 };
 
 &mmc1 {
@@ -99,6 +101,11 @@
         };
 };
 
+&pwm{
+		pinctrl-names = "default";
+		pinctrl-0 = <&pwm_pins>;
+		status = "okay";
+};
 
 /*
 &lradc {
