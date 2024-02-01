@@ -1,5 +1,5 @@
 
-setenv bootargs "${bootargs} console=ttyS0,115200 panic=5 rootwait root=/dev/mmcblk0p2 spidev.bufsiz=65536 earlyprintk rw"
+setenv bootargs "${bootargs} console=tty0 console=ttyS0,115200 panic=5 rootwait root=/dev/mmcblk0p2 spidev.bufsiz=65536 earlyprintk rw"
 
 if test "$quiet" = "1"; then
 	setenv bootargs "${bootargs} quiet"

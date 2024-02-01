@@ -484,7 +484,7 @@
 			};
 
 			spi0_pins: spi0-pins {
-				pins = "PC0", "PC1", "PC2", "PC3";
+				pins = "PC0", "PC1", "PC3";
 				function = "spi0";
 			};
 			

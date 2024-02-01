@@ -27,7 +27,7 @@
 			//linux,default-trigger = "activity";
 		};
 		
-	};
+	}; 
 	*/
 };
 
@@ -79,7 +79,7 @@
         status ="okay";
         pinctrl-names = "default";
         pinctrl-0 = <&spi0_pins>;
-        cs-gpios =   <&pio 4 19 GPIO_ACTIVE_HIGH>, <&pio 1 3 GPIO_ACTIVE_LOW>, <&pio 4 16 GPIO_ACTIVE_LOW>;
+        cs-gpios =   <&pio 2 2 GPIO_ACTIVE_HIGH>, <&pio 1 3 GPIO_ACTIVE_LOW>, <&pio 4 16 GPIO_ACTIVE_LOW>, <&pio 4 19 GPIO_ACTIVE_LOW>;
 
         mx25l25635e:mx25l25635e@0 {
                 compatible = "jedec,spi-nor";
@@ -99,6 +99,22 @@
                 reg = <0x2>;
                 spi-max-frequency = <5000000>;
         };
+
+		panel@3 {
+			compatible = "sitronix,st7789v";
+			reg = <0x3>;
+			rotate = <0>;
+			spi-cpol;
+			spi-cpha;
+			rgb;
+			fps = <30>;
+			buswidth = <8>;
+			reset-gpios = <&pio 4 6 GPIO_ACTIVE_LOW>;   // PE6
+			dc-gpios = <&pio 4 4 GPIO_ACTIVE_HIGH>;		// PE4
+			spi-max-frequency = <32000000>;
+			debug = <0>;
+			status = "okay";
+		};
 };
 
 &pwm{
